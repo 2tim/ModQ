@@ -10,8 +10,12 @@ bb_paper = newspaper.build('http://www.bloomberg.com', memoize_articles=False)
 reuters_paper = newspaper.build('http://www.reuters.com', memoize_articles=False)
 
 articles = {}
-with open("articles.json", 'r') as a:
-    articles = json.load(a)
+try:
+    with open("articles.json", 'r') as a:
+        articles = json.load(a)
+except FileNotFoundError as e:
+    articles = {}
+
 previous = set(articles.keys())
 for article in bb_paper.articles + reuters_paper.articles:
     if article.url not in previous:
