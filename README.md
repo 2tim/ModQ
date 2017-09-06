@@ -2,7 +2,7 @@
 Example code for ModuleQ
 
 
-## Setup and installation
+## Setup and Installation
 
 1. Clone the repo: `git clone https://github.com/2tim/ModQ.git`
 2. Create a virtualenv if necessary using Python 3.5+ (code should run on Python 2.7.x as well but is untested).
